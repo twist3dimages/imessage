@@ -10,15 +10,40 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    labels:
+      - "dependencies"
+      - "automated"
+      - "gomod"
+
+  # Enable version updates for pip
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "pip prod"
+      prefix-development: "pip dev"
+    labels:
+      - "dependencies"
+      - "automated"
+      - "pip"
 
   # Enable version updates for Docker
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "weekly"
+    labels:
+      - "dependencies"
+      - "automated"
+      - "docker"
 
   # Enable version updates for GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    labels:
+      - "dependencies"
+      - "automated"
+      - "github-actions"
